@@ -21,6 +21,10 @@ defineProps({
 })
 
 const state = reactive({ count: 0 })
+// 请求
+fetch('/api/getUser').then(res=>res.json()).then(data=>{
+  console.log('%c 🍥 data: ', 'font-size:20px;background-color: #FFDD4D;color:#fff;', data);
+})
 </script>
 
 <style scoped>

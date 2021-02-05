@@ -1,11 +1,17 @@
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
+// defineConfig 获得代码提示
+import { defineConfig } from 'vite';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import { viteMockServe } from 'vite-plugin-mock';
 
 /**
  * https://vitejs.dev/config/
  * @type {import('vite').UserConfig}
  */
-export default {
+export default defineConfig({
+  // css:{},
+  // esbuild:{},
   alias: {
     '@': path.resolve(__dirname, 'src'),
     comps: path.resolve(__dirname, 'src/components'),
@@ -17,5 +23,5 @@ export default {
     apis: path.resolve(__dirname, 'src/apis'),
     dirs: path.resolve(__dirname, 'src/directives'),
   },
-  plugins: [vue()],
-};
+  plugins: [vue(), vueJsx(), viteMockServe({ supportTs: false })],
+});
