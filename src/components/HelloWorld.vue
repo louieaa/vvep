@@ -1,6 +1,7 @@
 <template>
   <h1>{{ msg }}</h1>
   <h2>{{$store.state.counter}}</h2>
+  <el-button type="danger">{{$store.state.counter}}</el-button>
 
   <p>
     <a href="https://vitejs.dev/guide/features.html" target="_blank">Vite Documentation</a> |
