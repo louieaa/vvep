@@ -7,7 +7,7 @@ export const routes = [
   // }
   {
     path: "/",
-    component: Layout,
+    component: Layout
   }
 ];
 const router = createRouter({ history: createWebHashHistory(), routes });
