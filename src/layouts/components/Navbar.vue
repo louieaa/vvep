@@ -12,7 +12,7 @@
         </div>
         <el-dropdown-menu class="user-dropdown">
           <router-link to="/">
-            <el-dropdown-item> 首页 </el-dropdown-item>
+            <el-dropdown-item> 首页{{louie}}</el-dropdown-item>
           </router-link>
           <a target="_blank" href="https://github.com/57code/vite2-in-action/">
             <el-dropdown-item>我的Github</el-dropdown-item>
@@ -22,7 +22,17 @@
     </div>
   </div>
 </template>
-<script setup>
+
+<script>
+export default {
+  setup (props) {
+  	console.log(props)
+  	return {
+      louie:331
+  	}
+  }
+}
+// import { reactive,ref } from 'vue';
 // import Breadcrumb from "./Breadcrumb.vue";
 </script>
 <style lang="scss" scoped>
@@ -32,7 +42,6 @@
   position: relative;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-
   .breadcrumb-container {
     float: left;
   }
